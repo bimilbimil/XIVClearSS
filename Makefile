@@ -75,6 +75,9 @@ package: $(BUILD_DLL)
 			echo "  Updated LastUpdate and AssemblyVersion to $$NEW_VERSION"; \
 			echo "  Note: DownloadLinks unchanged. Run: make package RELEASE_TAG=v1.0.1 to update them."; \
 		fi; \
+		jq --arg ver $$NEW_VERSION '.AssemblyVersion = $$ver' $(JSON_NAME) > $(JSON_NAME).tmp && mv $(JSON_NAME).tmp $(JSON_NAME); \
+		sed -i.bak "s/\"AssemblyVersion\": \"[^\"]*\"/\"AssemblyVersion\": \"$$NEW_VERSION\"/" $(PROJECT_NAME).yaml && rm -f $(PROJECT_NAME).yaml.bak; \
+		echo "  Synced AssemblyVersion in $(JSON_NAME) and $(PROJECT_NAME).yaml"; \
 	else \
 		sed -i.bak "s/\"LastUpdate\": [0-9]*/\"LastUpdate\": $$TIMESTAMP/" repo.json && rm -f repo.json.bak; \
 		echo "  Updated LastUpdate (jq not found — AssemblyVersion not bumped)"; \
