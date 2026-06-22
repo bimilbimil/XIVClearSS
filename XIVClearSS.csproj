@@ -23,6 +23,7 @@
   <ItemGroup>
     <None Include="XIVClearSS.json" CopyToOutputDirectory="PreserveNewest" />
     <None Include="XIVClearSS.yaml" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="xivclearss.png" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
   <ItemGroup>
