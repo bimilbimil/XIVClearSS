@@ -85,7 +85,8 @@ package: $(BUILD_DLL)
 		([ -f $(DLL_NAME) ] && zip -q ../../dist/$(PROJECT_NAME).zip $(DLL_NAME) || (echo "DLL not found" && exit 1)) && \
 		([ -f $(DLL_NAME:.dll=.deps.json) ] && zip -q ../../dist/$(PROJECT_NAME).zip $(DLL_NAME:.dll=.deps.json) || true) && \
 		cd ../.. && \
-		zip -q dist/$(PROJECT_NAME).zip $(JSON_NAME)
+		zip -q dist/$(PROJECT_NAME).zip $(JSON_NAME) && \
+		([ -f $(PROJECT_NAME).yaml ] && zip -q dist/$(PROJECT_NAME).zip $(PROJECT_NAME).yaml || true)
 	@if [ -f dist/$(PROJECT_NAME).zip ]; then \
 		echo "Package created: dist/$(PROJECT_NAME).zip"; \
 		ls -lh dist/$(PROJECT_NAME).zip; \
@@ -105,7 +106,8 @@ package-dev: $(BUILD_DLL)
 		([ -f $(DLL_NAME) ] && zip -q ../../dist/$(PROJECT_NAME)-dev.zip $(DLL_NAME) || (echo "DLL not found" && exit 1)) && \
 		([ -f $(DLL_NAME:.dll=.deps.json) ] && zip -q ../../dist/$(PROJECT_NAME)-dev.zip $(DLL_NAME:.dll=.deps.json) || true) && \
 		cd ../.. && \
-		zip -q dist/$(PROJECT_NAME)-dev.zip $(JSON_NAME)
+		zip -q dist/$(PROJECT_NAME)-dev.zip $(JSON_NAME) && \
+		([ -f $(PROJECT_NAME).yaml ] && zip -q dist/$(PROJECT_NAME)-dev.zip $(PROJECT_NAME).yaml || true)
 	@if [ -f dist/$(PROJECT_NAME)-dev.zip ]; then \
 		echo "Dev package: dist/$(PROJECT_NAME)-dev.zip"; \
 		ls -lh dist/$(PROJECT_NAME)-dev.zip; \
