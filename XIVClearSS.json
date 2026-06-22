@@ -1,0 +1,15 @@
+{
+    "Name": "XIVClearSS",
+    "Author": "Asphodel",
+    "Description": "Temporarily switches to a custom high resolution, takes a screenshot, then restores your original resolution. Configure your target resolution once, then trigger on demand.",
+    "Punchline": "High-resolution screenshots beyond the UI limit.",
+    "InternalName": "XIVClearSS",
+    "RepoUrl": "https://github.com/placeholder/XIVClearSS",
+    "Tags": [ "screenshot", "resolution", "utility", "photo" ],
+    "CategoryTags": [ "Utility" ],
+    "AssemblyVersion": "1.0.0.0",
+    "ApplicableVersion": "any",
+    "DalamudApiLevel": 15,
+    "HasConfigUi": true,
+    "HasMainUi": true
+}
