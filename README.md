@@ -6,15 +6,16 @@ A Dalamud plugin for FFXIV that temporarily switches your game to a custom high 
 
 > **The game must be in Windowed mode** for resolution switching to work. Fullscreen and Borderless Windowed are not supported. You can change this in `System Configuration → Screen Settings → Screen Mode`.
 
-## Installation (Dev Plugin)
+## Installation
 
-1. Build the plugin with `make build`
-2. In-game, open `/xlsettings` → **Experimental** tab
-3. Under **Dev Plugin Locations**, add the path to the DLL:
+1. In-game, open `/xlsettings` → **Experimental** tab
+2. Under **Custom Plugin Repositories**, add:
    ```
-   /Users/<you>/Library/Application Support/XIV on Mac/dalamud/Hooks/dev/plugins/XIVClearSS.dll
+   https://raw.githubusercontent.com/bimilbimil/XIVClearSS/main/repo.json
    ```
-4. Open `/xlplugins` → **Dev Plugins** tab and enable XIVClearSS
+3. Open `/xlplugins`, search for **XIVClearSS**, and install it
+
+> Available after the first release is published.
 
 ## Usage
 
