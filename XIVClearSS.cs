@@ -11,7 +11,7 @@ namespace XIVClearSS
 {
     public sealed class XIVClearSSPlugin : IDalamudPlugin
     {
-        public string Name => "XIVClearSS";
+        public string Name => "ClearSS";
 
         private const string CommandName = "/clearss";
 
@@ -44,7 +44,11 @@ namespace XIVClearSS
             Configuration.Initialize(pluginInterface);
 
             ResolutionService = new ResolutionService(Configuration, pluginLog, chatGui);
-            MainWindow        = new MainWindow(Configuration, ResolutionService, keyState, () => _hotkeyWasDown = true);
+
+            if (Configuration.WasHighResOnExit && Configuration.SavedOriginalWidth > 0)
+                ResolutionService.ForceRestore(Configuration.SavedOriginalWidth, Configuration.SavedOriginalHeight);
+
+            MainWindow = new MainWindow(Configuration, ResolutionService, keyState, () => _hotkeyWasDown = true);
 
             WindowSystem.AddWindow(MainWindow);
 

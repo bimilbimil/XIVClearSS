@@ -21,7 +21,7 @@ namespace XIVClearSS.UI
         private bool _capturingHotkey = false;
 
         public MainWindow(Configuration config, ResolutionService resolutionService, IKeyState keyState, System.Action onHotkeySet)
-            : base("XIVClearSS", ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse)
+            : base("ClearSS", ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse)
         {
             _config            = config;
             _resolutionService = resolutionService;

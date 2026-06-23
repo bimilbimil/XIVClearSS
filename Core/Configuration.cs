@@ -17,6 +17,11 @@ namespace XIVClearSS.Core
 
         public bool DebugLogsEnabled { get; set; } = false;
 
+        // Persisted so we can restore after a crash or unclean shutdown
+        public bool WasHighResOnExit    { get; set; } = false;
+        public uint SavedOriginalWidth  { get; set; } = 0;
+        public uint SavedOriginalHeight { get; set; } = 0;
+
         [NonSerialized]
         public IDalamudPluginInterface PluginInterface;
 

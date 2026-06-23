@@ -1,7 +1,7 @@
 {
-  "Name": "XIVClearSS",
+  "Name": "ClearSS",
   "Author": "Asphodel",
-  "Description": "Temporarily switches to a custom high resolution, takes a screenshot, then restores your original resolution. Configure your target resolution once, then trigger on demand.",
+  "Description": "Switches to a custom high resolution so you can take screenshots beyond the in-game limit, then lets you restore your original resolution when done. Configure your target resolution once and trigger on demand.",
   "Punchline": "High-resolution screenshots beyond the UI limit.",
   "InternalName": "XIVClearSS",
   "RepoUrl": "https://github.com/bimilbimil/XIVClearSS",
@@ -14,7 +14,7 @@
   "CategoryTags": [
     "Utility"
   ],
-  "AssemblyVersion": "1.0.0.5",
+  "AssemblyVersion": "1.0.0.6",
   "ApplicableVersion": "any",
   "DalamudApiLevel": 15,
   "HasConfigUi": true,
